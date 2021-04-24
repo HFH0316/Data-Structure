@@ -8,12 +8,12 @@ typedef struct{
     int top;
 } SqStack;
 
-void InitStack(SqStack* S)
+void InitStack(SqStack* S)//初始化栈
 {
     S->top = -1;
 }
 
-bool StackEmpty(SqStack S)
+bool StackEmpty(SqStack S)//判断栈是否为空
 {
     if(S.top == -1){
         return true;
@@ -27,7 +27,7 @@ bool Push(SqStack* S,int* x)
     if(S->top == MaxSize-1){
         return false;
     }
-    S->data[++S->top] = *x;
+    S->data[++S->top] = *x;//注意x是指针，需要对指针进行解引用（*：解引用，&：取地址）
     return true;
 }
 
@@ -36,7 +36,7 @@ bool Pop(SqStack* S,int* x)
     if(S->top == -1){
         return false;
     }
-    *x = S->data[S->top--];
+    *x = S->data[S->top--];//注意x是指针，需要对指针进行解引用（*：解引用，&：取地址）
     return true;
 }
 
@@ -45,7 +45,7 @@ bool GetTop(SqStack S,int* x)
     if(S.top == -1){
         return false;
     }
-    *x = S.data[S.top];
+    *x = S.data[S.top];//注意x是指针，需要对指针进行解引用（*：解引用，&：取地址）
     return true;
 }
 
@@ -54,6 +54,7 @@ int main(void)
     int len = 5;
     int x_1;
     int x_2;
+
     SqStack S;
 
     InitStack(&S);
@@ -61,8 +62,10 @@ int main(void)
     bool flag_1 = StackEmpty(S);
     if(flag_1){
         printf("Stack is Empty\n");
+        printf("\n");
     }else{
         printf("Stack is not Empty\n");
+        printf("\n");
     }
 
     for (int i = 0;i < len;i++){
@@ -74,6 +77,7 @@ int main(void)
             printf("\n");
         }else{
             printf("Push Failed\n");
+            printf("\n");
         }
     }
 
