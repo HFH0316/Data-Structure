@@ -31,7 +31,7 @@ bool Push(SqStack &S,ElemType x)
 bool Pop(SqStack &s,ElemType &x)
 {
     if(S.top == -1){
-        return flase;
+        return false;
     }
     x = S.data[S.top--];//先出栈，栈顶指针再-1
     return true;
@@ -40,7 +40,7 @@ bool Pop(SqStack &s,ElemType &x)
 bool GetTop(SqStack s,ElemType &x)
 {
     if(S.top == -1){
-        return flase;
+        return false;
     }
     x = S.data[S.top];
     return true;
